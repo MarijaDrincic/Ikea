@@ -33,6 +33,7 @@ public class IkeaShoppingBagPage extends BaseHelper
     {
         Select quantity = new Select(driver.findElement(By.xpath("//*[@id=\"one-checkout\"]/main/div/div/div/div[18]/div[2]/div/div/div[2]/div[1]/div[1]/div/select")));
         quantity.selectByValue(desiredQuantity);
+        wdWait.until(ExpectedConditions.presenceOfElementLocated(By.className("product_prices__pjmpg")));
 
     }
 
