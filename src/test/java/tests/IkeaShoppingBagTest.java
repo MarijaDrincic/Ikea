@@ -18,7 +18,7 @@ public class IkeaShoppingBagTest extends BaseTest
         String url = "https://www.ikea.com/rs/sr/";
         String searchTerm = "dekoracija";
         int numberOfProduct = 3;
-        String desiredQuantity = "3";
+        String desiredQuantity = "5";
 
         IkeaHomePage ikeaHomePage = new IkeaHomePage(driver);
         ikeaHomePage.searchFunctionalityTest(url, searchTerm);
