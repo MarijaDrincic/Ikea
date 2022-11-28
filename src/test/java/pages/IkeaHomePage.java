@@ -20,10 +20,13 @@ public class IkeaHomePage extends BaseHelper
 
     }
 
+    @FindBy(className = "search-wrapper")
+    WebElement searchWrapper;
     @FindBy(name = "q")
     WebElement searchField;
     @FindBy (id = "search-box__searchbutton")
     WebElement searchButton;
+
 
 
     private void navigateToHomePage (String url)
@@ -42,7 +45,7 @@ public class IkeaHomePage extends BaseHelper
 
     private void insertSearchTerm (String searchTerm)
     {
-        wdWait.until(ExpectedConditions.presenceOfElementLocated(By.className("search-wrapper")));
+        wdWait.until(ExpectedConditions.visibilityOf(searchWrapper));
         searchField.sendKeys(searchTerm);
         searchButton.click();
     }

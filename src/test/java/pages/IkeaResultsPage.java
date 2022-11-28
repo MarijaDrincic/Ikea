@@ -20,17 +20,19 @@ public class IkeaResultsPage extends BaseHelper
 
     }
 
-    @FindBy(className = "results") //ne diraj
+    @FindBy(className = "results")
     WebElement results;
     @FindBy (className = "filters__bar")
     WebElement filtersContainer;
     @FindBy (className = "filter-dropdown__wrapper")
     WebElement priceRangeSection;
+    @FindBy (id = "search-results")
+    WebElement searchResults;
 
     public String selectDesiredProduct (int numberOfProduct)
     {
-        wdWait.until(ExpectedConditions.presenceOfElementLocated(By.id("search-results"))); //ne diraj
-        List<WebElement> products = results.findElements(By.className("product-fragment__info")); //ne diraj
+        wdWait.until(ExpectedConditions.visibilityOf(searchResults));
+        List<WebElement> products = results.findElements(By.className("product-fragment__info"));
         WebElement product = products.get(numberOfProduct).findElement(By.className("header-section__title"));
         String productTitle = product.getText();
         product.click();
