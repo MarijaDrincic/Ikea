@@ -41,6 +41,7 @@ public class IkeaHomePage extends BaseHelper
             acceptCookiesButton.get(0).click();
             wdWait.until(ExpectedConditions.invisibilityOf((acceptCookiesButton.get(0))));
         }
+
     }
 
     private void insertSearchTerm (String searchTerm)
