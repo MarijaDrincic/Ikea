@@ -40,7 +40,6 @@ public class IkeaHomePage extends BaseHelper
         if (acceptCookiesButton.size() != 0) {
             acceptCookiesButton.get(0).click();
             wdWait.until(ExpectedConditions.invisibilityOf((acceptCookiesButton.get(0))));
-
         }
     }
 
