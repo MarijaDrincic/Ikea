@@ -39,8 +39,10 @@ public class IkeaHomePage extends BaseHelper
         List<WebElement> acceptCookiesButton = driver.findElements(By.id("onetrust-accept-btn-handler"));
         if (acceptCookiesButton.size() != 0) {
             acceptCookiesButton.get(0).click();
-            wdWait.until(ExpectedConditions.visibilityOf(acceptCookiesButton.get(0)));
+            wdWait.until(ExpectedConditions.invisibilityOf((acceptCookiesButton.get(0))));
+
         }
+
     }
 
     private void insertSearchTerm (String searchTerm)
